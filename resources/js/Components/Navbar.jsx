@@ -4,7 +4,10 @@ export default function Navbar() {
     const { url } = usePage();
 
     function linkClass(path) {
-        const isActive = url === path;
+        const isActive =
+            path === '/'
+                ? url === '/'
+                : url.startsWith(path);
 
         return isActive
             ? 'rounded bg-blue-600 px-3 py-2 text-white'
